@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+service AVService {
+    rpc GetAVList(GetAVListReq) returns (GetAVListRep) {};
+}
+
+message GetAVListReq {
+    int32 limit = 1;
+    int32 offset = 2;
+    string keyword = 3;
+}
+
+message GetAVListRep {
+    repeated AV datas = 1;
+    int32 total = 2;
+}
+
+message AV {
+    int32 id = 1;
+    string title = 2;
+    string cover = 3;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+service UserService {
+    rpc GetUserById(GetUserByIdReq) returns (GetUserByIdRep) {};
+}
+
+message GetUserByIdReq {
+    int32 id = 1;
+}
+
+message GetUserByIdRep {
+    User data = 1;
+}
+
+message User {
+    int32 id = 1;
+    string nickname = 2;
+    int32 sex = 3;
+}
